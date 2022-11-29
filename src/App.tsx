@@ -10,7 +10,8 @@ export default function App(){
     const [textChecked, setTextChecked] = useState<boolean>(false)
     
     useEffect(() => {
-        axios.get('http://localhost:3000/textos.json').then((response) => {
+        let currentURL = window.location.href
+        axios.get(`${currentURL}/textos.json`).then((response) => {
             let randomNumber = Math.floor(Math.random() * response.data.length)
             setSelectedText(response.data[randomNumber])
             console.log(response.data[randomNumber])
