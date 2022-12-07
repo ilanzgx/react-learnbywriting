@@ -87,7 +87,7 @@ export default function App(){
                             <p className='font-medium'>
                                 { 
                                     textWords.map((word: any, index: number) => 
-                                        <span key={uuid()} style={{ backgroundColor:  (word == textWritedWords[index]) ? 'green' : 'red' }}>
+                                        <span key={uuid()} style={{ backgroundColor:  (word === textWritedWords[index]) ? 'green' : 'red' }}>
                                             { word + ' ' }
                                         </span>
                                     ) 
